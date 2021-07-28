@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(248, 187, 240);
+
+}
+
+.container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* the styles are for my video  */
+/* .title {
+    display: block;
+    margin-top: 50px;
+    width: 400px;
+    height:150px;
+}
+.icon {
+    display: block;
+    width: 200px;
+    height:200px;
+    border-radius: 50%;
+} */
+/* 
+
+@media screen and (max-width: 380px) {
+    .icon {
+        display:none;
+    }
+    
+} */
