@@ -6,14 +6,20 @@ import cx from 'classnames';
 import CountUp from 'react-countup';
 
 
-const Cards = ({cardData:{data}}) => {
-        // console.log(data);
-         if (!data) {
+// const Cards = ({cardData:{data}}) => {
+
+    // const Cards = (props) => {
+    //     console.log(props);
+
+
+const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
+  
+    // console.log(data);
+         if (!confirmed) {
         return 'Loading...';
     }
 
     return ( 
-       
 
         <div className = {styles.container}>
             <Grid container spacing = {3} justify = "center">
@@ -23,12 +29,12 @@ const Cards = ({cardData:{data}}) => {
                             <Typography variant = "h5">
                                 <CountUp 
                                 start = {0}
-                                end = {data.confirmed.value}
+                                end = {confirmed.value}
                                 duration = {1}
                                 separator = ','
                                 />
                             </Typography>
-                        <Typography color = "textSecondary">{new Date(data.lastUpdate).toDateString()}</Typography>
+                        <Typography color = "textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
                         <Typography variant = "body2">Number of active cases of COVID-19</Typography>
                     </CardContent>
                 </Grid>
@@ -39,12 +45,12 @@ const Cards = ({cardData:{data}}) => {
                         <Typography variant = "h5">
                             <CountUp 
                                     start = {0}
-                                    end = {data.recovered.value}
+                                    end = {recovered.value}
                                     duration = {1}
                                     separator = ','
                             />
                             </Typography>
-                        <Typography color = "textSecondary">{new Date(data.lastUpdate).toDateString()}</Typography>
+                        <Typography color = "textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
                         <Typography variant = "body2">Number of revoveries from COVID-19</Typography>
                     </CardContent>
                 </Grid>
@@ -55,12 +61,12 @@ const Cards = ({cardData:{data}}) => {
                         <Typography variant = "h5">
                             <CountUp 
                                         start = {0}
-                                        end = {data.deaths.value}
+                                        end = {deaths.value}
                                         duration = {1}
                                         separator = ','
                             />                                
                             </Typography>
-                        <Typography color = "textSecondary">{new Date(data.lastUpdate).toDateString()}</Typography>
+                        <Typography color = "textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
                         <Typography variant = "body2">Number of deaths caused by COVID-19</Typography>
                     </CardContent>
                 </Grid>
